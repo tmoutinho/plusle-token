@@ -1,40 +1,18 @@
 
 "use client";
 
-import { useEffect } from "react";
 import { FaTelegram, FaTwitter } from "react-icons/fa";
 
-declare global {
-  interface Window {
-    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-    TradingView: any;
-  }
-}
-
-
 export default function Home() {
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && window.TradingView) {
-      new window.TradingView.widget({
-        symbol: "0x006d197201d162343D62C9F9759F0758336dF560",
-        interval: "1",
-        locale: "en",
-        clientId: "0",
-        userId: "0",
-        chartsStorageVer: "1.0",
-        debug: false,
-        timezone: "Etc/UTC",
-        theme: "dark",
-        container_id: "tradingview_chart"
-      });
-    }
-  }, []);
-
   return (
     <div className="bg-gradient-to-br from-yellow-300 to-blue-400 min-h-screen font-sans text-gray-900 py-20">
       <main className="container mx-auto p-6">
-        <h1 className="text-4xl font-extrabold text-center text-red-600 mt-4" style={{ fontFamily: 'Comic Sans MS, sans-serif' }}>
+
+        <div className="flex items-center justify-center pb-6">
+          <img src="/main.jpeg" alt="Main" width={300} />
+        </div>
+
+        <h1 className="text-6xl font-extrabold text-center text-red-600 mt-4" style={{ fontFamily: 'Comic Sans MS, sans-serif' }}>
           Plusle to Pulse ピカとピコ  ⚡
         </h1>
         <p className="text-center text-gray-700 mt-8 text-2xl">
@@ -43,10 +21,10 @@ export default function Home() {
 
         <div className="flex items-center justify-center mt-8 gap-6">
           <a href="https://t.me/PlusleToPulse" target="_blank" rel="noreferrer">
-            <FaTelegram size="2em" />
+            <FaTelegram size="2em" color="#dc2626" />
           </a>
           <a href="https://x.com/plusletopulse" target="_blank" rel="noreferrer">
-            <FaTwitter size="2em" />
+            <FaTwitter size="2em" color="#dc2626" />
           </a>
         </div>
 
@@ -57,7 +35,7 @@ export default function Home() {
             className="bg-yellow-400 flex gap-2 w-52 justify-center items-center text-blue-600 font-bold border text-4xl py-2 px-4 rounded hover:bg-yellow-500 transition"
             rel="noreferrer"
           >
-            <img src="/pulsechain.png" alt="Pulsechain Logo" className="h-16" />
+            <img src="/pulsechain.png" alt="Pulsechain Logo" className="h-12" />
             Buy
           </a>
         </div>
@@ -72,7 +50,8 @@ export default function Home() {
         <div className="mt-12">
           <h2 className="text-3xl font-bold text-center text-red-600 mb-4">Plusle Token Price Chart</h2>
           <div className="">
-            <div id="tradingview_chart" className="w-full h-[500px]" />
+            {/* biome-ignore lint/a11y/useIframeTitle: <explanation> */}
+            <iframe src="https://coin.quest/Pulsechain/0x006d197201d162343D62C9F9759F0758336dF560?embed=1&theme=dark" className="w-full h-[600px]" />
           </div>
         </div>
       </main>
