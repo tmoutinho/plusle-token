@@ -28,17 +28,33 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="text-center flex items-center justify-center mt-8 py-14">
+        <div className="text-center text-2xl pt-14 text-red-600 space-y-4">
+          <h3 className="font-bold">Initial Supply:</h3>
+          <p className="text-red-600 text-4xl">
+            1,000,000,000
+          </p>
+        </div>
+
+
+        <div className="text-center flex items-center justify-center mt-8 py-14 gap-5">
           <a
-            href="https://coin.quest/Pulsechain/0x006d197201d162343D62C9F9759F0758336dF560"
+            href="https://app.9inch.io/?chain=pulsechain&outputCurrency=0x006d197201d162343D62C9F9759F0758336dF560"
             target="_blank"
-            className="bg-yellow-400 flex gap-2 w-52 justify-center items-center text-blue-600 font-bold border text-4xl py-2 px-4 rounded hover:bg-yellow-500 transition"
+            className="bg-yellow-400 flex gap-2 px-10 justify-center items-center text-blue-600 font-bold border text-4xl py-2  rounded hover:bg-yellow-500 transition"
             rel="noreferrer"
           >
-            <img src="/pulsechain.png" alt="Pulsechain Logo" className="h-12" />
             Buy
           </a>
+
+          <a href="https://dexscreener.com/pulsechain/0x0b635019c81339a04d3347ea4234328c403dd12e" target="_blank"
+            className="bg-yellow-400 flex gap-2 px-10 justify-center items-center text-blue-600 font-bold border text-4xl py-2 rounded hover:bg-yellow-500 transition"
+            rel="noreferrer"
+          >
+            Dexscreener
+          </a>
         </div>
+
+        <div className="text-center text-4xl pt-4 text-red-600">Ca: 0x006d197201d162343D62C9F9759F0758336dF560</div>
 
         <div className="flex items-center justify-center mt-8 gap-6 py-10">
           <img src="/1.webp" alt="Plusle 1" className="h-44" />
@@ -51,7 +67,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center text-red-600 mb-4">Plusle Token Price Chart</h2>
           <div className="">
             {/* biome-ignore lint/a11y/useIframeTitle: <explanation> */}
-            <iframe src="https://coin.quest/Pulsechain/0x006d197201d162343D62C9F9759F0758336dF560?embed=1&theme=dark" className="w-full h-[600px]" />
+            <iframe src="https://dexscreener.com/pulsechain/0x0b635019c81339a04d3347ea4234328c403dd12e?embed=1&theme=dark" className="w-full h-[600px]" />
           </div>
         </div>
       </main>
